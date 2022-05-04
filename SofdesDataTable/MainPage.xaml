@@ -8,155 +8,168 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <ComboBox
-            ItemsSource="{x:Bind Manufacturers}"
-            DisplayMemberPath="Name"
-            HorizontalAlignment="Stretch"
-            PlaceholderText="Select a manufacturer"
-            SelectedIndex="{x:Bind SelectedManufacturerIndex, Mode=TwoWay}"
-            Margin="16,16,16,8"/>
-        <TextBlock
-            Text="Name"
-            FontWeight="Bold"
-            Grid.Row="1"
-            Margin="16,8,16,0"
-            Visibility="{x:Bind ManufacturerSelected, Mode=OneWay}"/>
-        <TextBlock
-            Text="{x:Bind SelectedManufacturer.Name, Mode=OneWay}"
-            Grid.Row="2"
-            Margin="16,0,16,8"
-            d:Text="Samsung"
-            Visibility="{x:Bind ManufacturerSelected, Mode=OneWay}"/>
-        <TextBlock
-            Text="Origin"
-            FontWeight="Bold"
-            Grid.Row="3"
-            Margin="16,8,16,0"
-            Visibility="{x:Bind ManufacturerSelected, Mode=OneWay}"/>
-        <TextBlock
-            Text="{x:Bind SelectedManufacturer.Origin, Mode=OneWay}"
-            Grid.Row="4"
-            Margin="16,0,16,8"
-            d:Text="South Korea"
-            Visibility="{x:Bind ManufacturerSelected, Mode=OneWay}"/>
-        <TextBlock
-            Text="Market Share"
-            FontWeight="Bold"
-            Grid.Row="5"
-            Margin="16,8,16,0"
-            Visibility="{x:Bind ManufacturerSelected, Mode=OneWay}"/>
-        <TextBlock
-            Text="{x:Bind SelectedManufacturer.MarketShare, Mode=OneWay}"
-            Grid.Row="6"
-            Margin="16,0,16,8"
-            d:Text="27.78%"
-            Visibility="{x:Bind ManufacturerSelected, Mode=OneWay}"/>
-        <TextBlock
-            Text="Parent Company"
-            FontWeight="Bold"
-            Grid.Row="7"
-            Margin="16,8,16,0"
-            Visibility="{x:Bind ManufacturerSelected, Mode=OneWay}"/>
-        <TextBlock
-            Text="{x:Bind SelectedManufacturer.ParentCompany, Mode=OneWay}"
-            Grid.Row="8"
-            Margin="16,0,16,8"
-            d:Text="None"
-            Visibility="{x:Bind ManufacturerSelected, Mode=OneWay}"/>
-        <TextBlock
-            Text="Stock symbol"
-            FontWeight="Bold"
-            Grid.Row="9"
-            Margin="16,8,16,0"
-            Visibility="{x:Bind ManufacturerSelected, Mode=OneWay}"/>
-        <TextBlock
-            Text="{x:Bind SelectedManufacturer.StockSymbol, Mode=OneWay}"
-            Grid.Row="10"
-            Margin="16,0,16,8"
-            d:Text="SSNLF"
-            Visibility="{x:Bind ManufacturerSelected, Mode=OneWay}"/>
-        <ComboBox
-            ItemsSource="{x:Bind SelectedManufacturer.Phones, Mode=OneWay}"
-            DisplayMemberPath="Name"
-            HorizontalAlignment="Stretch"
-            PlaceholderText="Select a phone"
-            SelectedIndex="{x:Bind SelectedPhoneIndex, Mode=TwoWay}"
-            Visibility="{x:Bind ManufacturerSelected, Mode=OneWay}"
-            Margin="16,16,16,8"
-            Grid.Column="1"/>
-        <TextBlock
-            Text="Name"
-            FontWeight="Bold"
-            Grid.Row="1"
-            Margin="16,8,16,0"
-            Visibility="{x:Bind PhoneSelected, Mode=OneWay}"
-            Grid.Column="1"/>
-        <TextBlock
-            Text="{x:Bind SelectedPhone.Name, Mode=OneWay}"
-            Grid.Row="2"
-            Margin="16,0,16,8"
-            d:Text="Samsung"
-            Visibility="{x:Bind PhoneSelected, Mode=OneWay}"
-            Grid.Column="1"/>
-        <TextBlock
-            Text="Operating System"
-            FontWeight="Bold"
-            Grid.Row="3"
-            Margin="16,8,16,0"
-            Visibility="{x:Bind PhoneSelected, Mode=OneWay}"
-            Grid.Column="1"/>
-        <TextBlock
-            Text="{x:Bind SelectedPhone.OperatingSystem, Mode=OneWay}"
-            Grid.Row="4"
-            Margin="16,0,16,8"
-            d:Text="South Korea"
-            Visibility="{x:Bind PhoneSelected, Mode=OneWay}"
-            Grid.Column="1"/>
-        <TextBlock
-            Text="SoC"
-            FontWeight="Bold"
-            Grid.Row="5"
-            Margin="16,8,16,0"
-            Visibility="{x:Bind PhoneSelected, Mode=OneWay}"
-            Grid.Column="1"/>
-        <TextBlock
-            Text="{x:Bind SelectedPhone.Soc, Mode=OneWay}"
-            Grid.Row="6"
-            Margin="16,0,16,8"
-            d:Text="27.78%"
-            Visibility="{x:Bind PhoneSelected, Mode=OneWay}"
-            Grid.Column="1"/>
-        <TextBlock
-            Text="RAM size"
-            FontWeight="Bold"
-            Grid.Row="7"
-            Margin="16,8,16,0"
-            Visibility="{x:Bind PhoneSelected, Mode=OneWay}"
-            Grid.Column="1"/>
-        <TextBlock
-            Text="{x:Bind SelectedPhone.RamSize, Mode=OneWay}"
-            Grid.Row="8"
-            Margin="16,0,16,8"
-            d:Text="27.78%"
-            Visibility="{x:Bind PhoneSelected, Mode=OneWay}"
-            Grid.Column="1"/>
-    </Grid>
+    <ScrollViewer>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="16" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="16" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="16" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="16" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="16" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="16" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="16" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="16" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="16" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="16" />
+            </Grid.RowDefinitions>
+            <ComboBox
+                ItemsSource="{x:Bind Manufacturers}"
+                DisplayMemberPath="Name"
+                HorizontalAlignment="Stretch"
+                PlaceholderText="Select a manufacturer"
+                Grid.Row="1"
+                Grid.Column="1"
+                SelectedItem="{x:Bind SelectedManufacturer, Mode=TwoWay}" />
+            <TextBlock
+                Text="Name"
+                FontWeight="Bold"
+                Grid.Row="3"
+                Grid.Column="1"
+                Visibility="{x:Bind SelectedManufacturer, Mode=OneWay, Converter={StaticResource NullVisibilityConverter}}" />
+            <TextBlock
+                Text="{x:Bind SelectedManufacturer.Name, Mode=OneWay}"
+                Grid.Row="4"
+                Grid.Column="1"
+                d:Text="Samsung"
+                Visibility="{x:Bind SelectedManufacturer, Mode=OneWay, Converter={StaticResource NullVisibilityConverter}}" />
+            <TextBlock
+                Text="Origin"
+                FontWeight="Bold"
+                Grid.Row="6"
+                Grid.Column="1"
+                Visibility="{x:Bind SelectedManufacturer, Mode=OneWay, Converter={StaticResource NullVisibilityConverter}}" />
+            <TextBlock
+                Text="{x:Bind SelectedManufacturer.Origin, Mode=OneWay}"
+                Grid.Row="7"
+                Grid.Column="1"
+                d:Text="South Korea"
+                Visibility="{x:Bind SelectedManufacturer, Mode=OneWay, Converter={StaticResource NullVisibilityConverter}}" />
+            <TextBlock
+                Text="Market Share"
+                FontWeight="Bold"
+                Grid.Row="9"
+                Grid.Column="1"
+                Visibility="{x:Bind SelectedManufacturer, Mode=OneWay, Converter={StaticResource NullVisibilityConverter}}" />
+            <TextBlock
+                Text="{x:Bind SelectedManufacturer.MarketShare, Mode=OneWay}"
+                Grid.Row="10"
+                Grid.Column="1"
+                d:Text="27.78%"
+                Visibility="{x:Bind SelectedManufacturer, Mode=OneWay, Converter={StaticResource NullVisibilityConverter}}" />
+            <TextBlock
+                Text="Parent Company"
+                FontWeight="Bold"
+                Grid.Row="12"
+                Grid.Column="1"
+                Visibility="{x:Bind SelectedManufacturer, Mode=OneWay, Converter={StaticResource NullVisibilityConverter}}" />
+            <TextBlock
+                Text="{x:Bind SelectedManufacturer.ParentCompany, Mode=OneWay}"
+                Grid.Row="13"
+                Grid.Column="1"
+                d:Text="None"
+                Visibility="{x:Bind SelectedManufacturer, Mode=OneWay, Converter={StaticResource NullVisibilityConverter}}" />
+            <TextBlock
+                Text="Stock symbol"
+                FontWeight="Bold"
+                Grid.Row="15"
+                Grid.Column="1"
+                Visibility="{x:Bind SelectedManufacturer, Mode=OneWay, Converter={StaticResource NullVisibilityConverter}}" />
+            <TextBlock
+                Text="{x:Bind SelectedManufacturer.StockSymbol, Mode=OneWay}"
+                Grid.Row="16"
+                Grid.Column="1"
+                d:Text="SSNLF"
+                Visibility="{x:Bind SelectedManufacturer, Mode=OneWay, Converter={StaticResource NullVisibilityConverter}}" />
+            <ComboBox
+                ItemsSource="{x:Bind SelectedManufacturer.Phones, Mode=OneWay}"
+                DisplayMemberPath="Name"
+                HorizontalAlignment="Stretch"
+                PlaceholderText="Select a phone"
+                SelectedItem="{x:Bind SelectedPhone, Mode=TwoWay}"
+                Grid.Row="1"
+                Grid.Column="3"
+                IsEnabled="{x:Bind SelectedManufacturer, Mode=OneWay, Converter={StaticResource NullEnabledConverter}}" />
+            <TextBlock
+                Text="Name"
+                FontWeight="Bold"
+                Grid.Row="3"
+                Grid.Column="3"
+                Visibility="{x:Bind SelectedPhone, Mode=OneWay, Converter={StaticResource NullVisibilityConverter}}" />
+            <TextBlock
+                Text="{x:Bind SelectedPhone.Name, Mode=OneWay}"
+                Grid.Row="4"
+                d:Text="Galaxy S8"
+                Grid.Column="3"
+                Visibility="{x:Bind SelectedPhone, Mode=OneWay, Converter={StaticResource NullVisibilityConverter}}" />
+            <TextBlock
+                Text="Operating System"
+                FontWeight="Bold"
+                Grid.Row="6"
+                Grid.Column="3"
+                Visibility="{x:Bind SelectedPhone, Mode=OneWay, Converter={StaticResource NullVisibilityConverter}}" />
+            <TextBlock
+                Text="{x:Bind SelectedPhone.OperatingSystem, Mode=OneWay}"
+                Grid.Row="7"
+                Grid.Column="3"
+                d:Text="Android"
+                Visibility="{x:Bind SelectedPhone, Mode=OneWay, Converter={StaticResource NullVisibilityConverter}}" />
+            <TextBlock
+                Text="SoC"
+                FontWeight="Bold"
+                Grid.Row="9"
+                Grid.Column="3"
+                Visibility="{x:Bind SelectedPhone, Mode=OneWay, Converter={StaticResource NullVisibilityConverter}}" />
+            <TextBlock
+                Text="{x:Bind SelectedPhone.Soc, Mode=OneWay}"
+                Grid.Row="10"
+                d:Text="Snapdragon 888"
+                Grid.Column="3"
+                Visibility="{x:Bind SelectedPhone, Mode=OneWay, Converter={StaticResource NullVisibilityConverter}}" />
+            <TextBlock
+                Text="RAM size"
+                FontWeight="Bold"
+                Grid.Row="12"
+                Grid.Column="3"
+                Visibility="{x:Bind SelectedPhone, Mode=OneWay, Converter={StaticResource NullVisibilityConverter}}" />
+            <TextBlock
+                Text="{x:Bind SelectedPhone.RamSize, Mode=OneWay}"
+                Grid.Row="13"
+                d:Text="8 GB"
+                Grid.Column="3"
+                Visibility="{x:Bind SelectedPhone, Mode=OneWay, Converter={StaticResource NullVisibilityConverter}}" />
+            <TextBlock
+                Grid.Row="17"
+                Grid.Column="3"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Right"
+                Text="From GSM Arena"
+                Visibility="{x:Bind SelectedPhone, Mode=OneWay, Converter={StaticResource NullVisibilityConverter}}" />
+        </Grid>
+    </ScrollViewer>
 </Page>
