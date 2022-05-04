@@ -1,5 +1,4 @@
-# sofdes-data-table
-Screenshots
+# Screenshots
 ![image](https://user-images.githubusercontent.com/17523579/166724278-95e0e4ba-76d4-4170-9692-5df06d7528a1.png)
 ![image](https://user-images.githubusercontent.com/17523579/166724336-377e2614-19b9-497e-a2da-e5754905a7dd.png)
 ![image](https://user-images.githubusercontent.com/17523579/166724383-f610c015-7ebf-4a7a-a942-48a9ac5dd101.png)
