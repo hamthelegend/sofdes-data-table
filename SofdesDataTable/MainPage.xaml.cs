@@ -29,7 +29,7 @@ namespace SofdesDataTable
                 "US",
                 27.68,
                 "None",
-                "AAPL",
+                "NASDAQ: AAPL",
                 new[]
                 {
                     new Phone("iPhone 13 Pro Max", "iOS 15", "A15 Bionic", 6),
